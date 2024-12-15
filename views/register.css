@@ -1,0 +1,159 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+.header {
+    background-color: #fff;
+    padding: 1rem 5%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.header .logo i {
+    color: #FF6600;
+    margin-right: 10px;
+}
+
+/* Register Form Container */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 5%;
+}
+
+.login-form {
+    background: #fff;
+    padding: 1.5rem; /* Reduced padding */
+    width: 100%;
+    max-width: 350px; /* Reduced width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    height: auto; /* Adjusted height */
+}
+
+.login-form h3 {
+    font-size: 1.5rem; /* Reduced font size */
+    color: #333;
+    margin-bottom: 1.2rem; /* Reduced margin */
+    font-weight: 500;
+}
+
+.login-form .box {
+    width: 100%;
+    padding: 0.8rem; /* Reduced padding */
+    margin: 0.5rem 0;
+    font-size: 1.2rem; /* Reduced font size */
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.login-form .box:focus {
+    border-color: #FF6600;
+}
+
+.login-form .btn {
+    width: 100%;
+    padding: 1rem; /* Reduced padding */
+    font-size: 1.4rem; /* Reduced font size */
+    background-color: #FF6600;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form .btn:hover {
+    background-color: #e65c00;
+}
+
+.login-form p {
+    font-size: 1.2rem; /* Reduced font size */
+    color: #777;
+    margin-top: 1rem;
+}
+
+.login-form p a {
+    color: #FF6600;
+    text-decoration: none;
+}
+
+.login-form p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    height: auto; /* Fixed height for footer */
+    padding: 1.5rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .box {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.footer p {
+    font-size: 1.3rem;
+    color: #bbb;
+    margin-top: 1rem;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .header .logo {
+        font-size: 2rem;
+    }
+
+    .login-form {
+        padding: 2rem;
+    }
+
+    .footer .box-container {
+        flex-direction: column;
+    }
+}
