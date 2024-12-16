@@ -17,7 +17,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// db.User = require('./User')(sequelize, DataTypes); 
+db.User = require('./User')(sequelize, DataTypes); 
 // db.Product = require('./Product')(sequelize, DataTypes);
 // db.cart = require('./Cart')(sequelize, DataTypes);
 
