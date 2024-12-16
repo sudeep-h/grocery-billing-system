@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const { User } = require('../models');
 const jwt = require('jsonwebtoken');
 const authenticateToken = require('../middleware/auth');
+const path = require('path');
 
 
 const router = express.Router();
@@ -23,6 +24,7 @@ router.post('/signup', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+    console.log("Login route hit!");
     const { email, password } = req.body;
 
     try {
@@ -33,6 +35,7 @@ router.post('/login', async (req, res) => {
         if (!isPasswordValid) return res.status(401).json({ message: 'Invalid credentials!' });
         
         const token = jwt.sign({id:user.id,email:user.email},JWT_SECRET,{expiresIn:'1h'});
+        res.cookie('auth_token', token, { httpOnly: true });
 
         res.status(200).json({
             message: 'Login successful!',
@@ -43,6 +46,11 @@ router.post('/login', async (req, res) => {
             },
             token 
         });
+
+        res.cookie('auth_token', token, { httpOnly: true });
+
+        res.sendFile(path.join(__dirname, '../views/profile.html'));
+
 
     } catch (error) {
         res.status(400).json({ message: 'Error logging in', error });
