@@ -14,6 +14,14 @@ document.querySelector('#login-btn').onclick = () => {
     loginForm.classList.toggle('active');
 };
 
+document.querySelector('.login-form .btn').onclick = (e) => {
+    e.preventDefault();
+    // Perform the logout action (you can clear the session or redirect the user)
+    alert("Logged out successfully!");
+    // Redirect to the home page or login page
+    window.location.href = '/grocery-shop-billing-system';  // Replace with the appropriate page URL
+};
+
 // Close all forms when scrolling
 window.onscroll = () => {
     searchForm.classList.remove('active');
@@ -21,42 +29,6 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 };
 
-// Handle login form submission
-document.querySelector('.login-form')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const email = document.querySelector('.login-form .box[type="email"]').value;
-    const password = document.querySelector('.login-form .box[type="password"]').value;
-
-    if (!email || !password) {
-        alert('Please enter both email and password');
-        return;
-    }
-
-    try {
-        const response = await fetch('http://localhost:5000/api/users/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        const data = await response.json();
-        if (response.ok) {
-            localStorage.setItem('authToken', data.token);
-            alert('Login successful!');
-            window.location.href = './views/profile.html';
-        } else {
-            console.error("Login failed:", data.message);
-            alert(`Login failed: ${data.message}`);
-
-        }
-        
-    } catch (error) {
-        console.error('Error during login:', error);
-    }
-});
 
 // Toggle navbar visibility
 document.querySelector('#menu-btn').onclick = () => {

@@ -47,9 +47,9 @@ router.post('/login', async (req, res) => {
             token 
         });
 
-        res.cookie('auth_token', token, { httpOnly: true });
+        // res.cookie('auth_token', token, { httpOnly: true });
 
-        res.sendFile(path.join(__dirname, '../views/profile.html'));
+        // res.sendFile(path.join(__dirname, '../views/profile.html'));
 
 
     } catch (error) {
